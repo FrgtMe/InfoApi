@@ -15,6 +15,6 @@ def info():
   return user
 
 def run_flask():
-  app.run()
+  app.run(host="0.0.0.0", port=80)
 Thread(target=run_flask).start();
 idle()
