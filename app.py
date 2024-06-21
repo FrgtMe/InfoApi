@@ -10,7 +10,10 @@ def info():
   username = request.args.get("uname")
   if not username:
     return "Misses some parameters!"
-  user = client.get_users(username)
+  try:
+    user = client.get_users(username)
+  except:
+    return "Invalid Username!"
   user = str(user)
   return user
 
